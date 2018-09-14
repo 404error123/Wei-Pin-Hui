@@ -88,7 +88,7 @@ function navAnimation(){
     navTop = nav.offsetTop + nav.clientHeight,
     navKey = true;
     document.addEventListener("scroll",function(){
-        var scroll = document.documentElement.scrollTop;   
+        var scroll = document.body.scrollTop || document.documentElement.scrollTop;
         if(scroll>navTop && navKey){
             nav.className = "sc-top";
             navKey = false;
@@ -139,7 +139,7 @@ function leftAside(){
         barTop = leftBar.offsetParent.offsetTop-80,
         barKey = true;
     window.addEventListener("scroll",function(){
-        var scroll = document.documentElement.scrollTop;
+        var scroll = document.body.scrollTop || document.documentElement.scrollTop;
         if(scroll>=barTop && barKey){
             setTimeout(function(){
                 leftBar.className = "hd-position fixed";            
